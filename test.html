@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<!--<form id="form">-->
+<!--<input type="text" name="author" placeholder="author"><br>-->
+<!--<input type="text" name="title" placeholder="title"><br>-->
+<!--<input type="text" name="content" placeholder="content"><br>-->
+<!--</form>-->
+<!--<button id="submit">submit</button>-->
+<div id="content"></div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script>
+    axios.defaults.headers.token = '37476ee229c22de90c28e07c9149f18b6fe21894';
+
+    const register = 'http://localhost/blogs/api/user/register.php';
+    const login = 'http://localhost/blogs/api/user/login.php';
+
+    const articleAdd = 'http://localhost/blogs/api/article/add.php';
+    const articleList = 'http://localhost/blogs/api/article/list.php';
+    const articleDetail = 'http://localhost/blogs/api/article/detail.php';
+    const articleDelete = 'http://localhost/blogs/api/article/delete.php';
+    const articleEdit = 'http://localhost/blogs/api/article/edit.php';
+
+    const commentAdd = 'http://localhost/blogs/api/comment/add.php';
+    const commentList = 'http://localhost/blogs/api/comment/list.php';
+    const commentDelete = 'http://localhost/blogs/api/comment/delete.php';
+
+    let data = {
+        // id: 2,
+        // uid: 1,
+        aid: 8,
+        // role: 1,
+        // username: 'admin',
+        // content: '马克',
+        // label: '分类',
+    };
+    console.log(data);
+
+    axios.post(commentList, data).then(res => {
+        console.log(res);
+    });
+
+
+
+    const addDataJson = {
+        username: 'root',
+        password: '123456'
+    };
+    // $.post(login, addDataJson, res => {
+    //     console.log(res);
+    // });
+    // const addDataFd = new FormData();
+    // addDataFd.append('username', 'wangwu');
+    // addDataFd.append('password', 'wangwu233');
+    // addDataFd.append('role', '2');
+    // axios.post(login, addDataJson).then(res => {
+    //     console.log(res)
+    // });
+</script>
+</body>
+</html>
